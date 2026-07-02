@@ -422,6 +422,9 @@ Flag-by-flag rationale:
     --save_predictions
 ```
 
+<img width="3822" height="1080" alt="image" src="https://github.com/user-attachments/assets/3c26afdb-6bb8-4d20-a7e0-f5a220382662" />
+
+
 What differs from the indoor walkthrough above:
 
 | Flag | Why it's there |
