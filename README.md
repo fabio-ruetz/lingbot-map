@@ -378,7 +378,7 @@ This builds `voxel_morton_ext` and `frustum_cull_ext` in place — both are impo
     --model_path /path/to/lingbot-map.pt \
     --config demo_render/config/indoor.yaml \
     --mode windowed --window_size 128 \
-    --keyframe_interval 13 --overlap_keyframes 8 \
+    --keyframe_interval 10 --overlap_keyframes 8 \
     --sky_mask_dir /data/outputs/sky_masks \
     --sky_mask_visualization_dir /data/outputs/sky_mask_viz \
     --camera_vis default --keyframes_only_points \
@@ -401,6 +401,9 @@ Flag-by-flag rationale:
 | `--keyframes_only_points` | Only unproject keyframe depth into the point cloud; non-keyframes still contribute their pose to the trajectory/frustum overlay. Keeps the cloud sparse for very long sequences. |
 | `--frame_tag --frame_tag_position top_right` | Stamp a `<i> / <N> Frames` counter in the top-right corner of the MP4. |
 | `--save_predictions` | Persist per-frame NPZs alongside the MP4. Useful for inspection or for re-rendering with different camera/overlay settings later. |
+
+
+Replacing keyframe_interval = 10 with image_stride = 10 speeds up rendering. Then, comment out the camera follow section in demo_render/config/indoor.yaml to reproduce the indoor fly-through effect shown in the demo.
 
 ### Worked Example — outdoor drive scene
 
